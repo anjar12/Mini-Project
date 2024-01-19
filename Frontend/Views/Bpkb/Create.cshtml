@@ -1,0 +1,137 @@
+﻿<!-- Content Header (Page header) -->
+<!-- Main content -->
+<section class="content container-fluid">
+    <!-- Horizontal Form -->
+    <div class="box box-info">
+        <div class="box-header with-border">
+            <h3 class="box-title">Insert Data BPKB</h3>
+        </div>
+        <!-- /.box-header -->
+        <!-- form start -->
+        <form class="form-horizontal" method="post">
+            <div class="box-body">
+                <div class="col-md-12">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="inputAgreementNumber" class="col-md-4 control-label">Agreement Number</label>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" name="agreement_number" id="agreement_number" placeholder="Agreement Number">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputbranch_id" class="col-md-4 control-label">Branch ID</label>
+                            <div class="col-md-8">
+                                <input type="text" required="required" class="form-control" name="branch_id" id="branch_id" placeholder="Input Branch ID">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputbpkb_no" class="col-md-4 control-label">No. BPKB</label>
+                            <div class="col-md-8">
+                                <input type="text" required="required" class="form-control" name="bpkb_no" id="bpkb_no" placeholder="Input No. BPKB">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputbpkb_date_in" class="col-md-4 control-label">Tanggal BPKB in</label>
+                            <div class="col-md-8">
+                                <div class="input-group date" data-provide="datepicker">
+                                    <input type="text" class="form-control pull-right" id="bpkb_date_in" name="bpkb_date_in">
+                                    <div class="input-group-addon">
+                                        <span class="glyphicon glyphicon-calendar"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputbpkb_date_in" class="col-md-4 control-label">Tanggal BPKB</label>
+                            <div class="col-md-8">
+                                <div class="input-group date" data-provide="datepicker">
+                                    <input type="text" class="form-control pull-right" id="bpkb_date" name="bpkb_date">
+                                    <div class="input-group-addon">
+                                        <span class="glyphicon glyphicon-calendar"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputfaktur_no" class="col-md-4 control-label">No. Faktur</label>
+                            <div class="col-md-8">
+                                <input type="text" required="required" class="form-control" name="faktur_no" id="faktur_no" placeholder="Input No. Faktur">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="inputfaktur_date" class="col-md-4 control-label">Tanggal Faktur</label>
+                            <div class="col-md-8">
+                                <div class="input-group date" data-provide="datepicker">
+                                    <input type="text" class="form-control pull-right" id="faktur_date" name="faktur_date" >
+                                    <div class="input-group-addon">
+                                        <span class="glyphicon glyphicon-calendar"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputpolice_no" class="col-md-4 control-label">No. Polisi</label>
+                            <div class="col-md-8">
+                                <input type="text" required="required" class="form-control" name="police_no" id="police_no" placeholder="Input No. Polisi">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputfaktur_date" class="col-md-4 control-label">Lokasi Penyimpanan</label>
+                            <div class="col-md-8">
+                                <select name="location_id" id="location_id" class="form-control" asp-items="@ViewBag.LocationList"></select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /.box-body -->
+            <div class="box-footer">
+                <button type="submit" class="btn btn-default">Cancel</button>
+                <button type="submit" class="btn btn-info pull-right" onclick="InsertData()">Create</button>
+            </div>
+            <!-- /.box-footer -->
+        </form>
+    </div>
+    <script>
+    function InsertData() {
+      $.ajax({
+        type: "POST",
+        url: '@Url.Action("InsertData", "Bpkb")',
+        data: {
+          agreement_number: $('#agreement_number').val(),
+          bpkb_no: $('#bpkb_no').val(),
+          branch_id: $('#branch_id').val(),
+          faktur_no: $('#faktur_no').val(),
+          faktur_date: $('#faktur_date').val(),
+          location_id: $('#location_id').val(),
+          police_no: $('#police_no').val(),
+          bpkb_date_in: $('#bpkb_date_in').val(),
+          bpkb_date: $('#bpkb_date').val(),
+          user_id: 0
+        },
+        error: function(result) {
+          alert("There is a Problem, Try Again!");
+        },
+        success: function(result) {
+          if (result.status == true) {
+            alert("Berhasil disimpan");
+          } else {
+            alert("Gagal disimpan");
+          }
+        }
+      });
+    }
+    </script>
+    <script type="text/javascript">
+        $('.input-group.date').datepicker({
+            todayBtn: "linked",
+            language: "it",
+            autoclose: true,
+            todayHighlight: true,
+            Format: 'yyyy-MM-dd'
+        });
+    </script>`
+    <!-- /.box -->
+</section>

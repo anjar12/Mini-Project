@@ -1,0 +1,37 @@
+﻿{
+  "Routes": [
+    {
+      "DownstreamPathTemplate": "/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5013
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "access_auth",
+        "AllowedScopes": []
+      },
+      "UpstreamPathTemplate": "/ServiceMaster/{everything}",
+      "UpstreamHttpMethod": [ "Post", "Get" ]
+    },
+    {
+      "DownstreamPathTemplate": "/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5008
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "access_auth",
+        "AllowedScopes": []
+      },
+      "UpstreamPathTemplate": "/ServiceTransactional/{everything}",
+      "UpstreamHttpMethod": [ "Post", "Get" ]
+    }
+  ]
+}
+
