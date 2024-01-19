@@ -3,6 +3,7 @@ Project bertujuan :
 
 Frontend :
 1. ASP.NET Core MVC
+2. Templating dengan Admin LTE
 
 Backend : 
 1. mengimplementasikan Api Gateway
