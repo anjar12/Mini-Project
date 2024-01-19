@@ -1,21 +1,24 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 25.0.1706.7
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34316.72
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Frontend", "Frontend\Frontend.csproj", "{01B4DBE8-FA72-418C-81C5-446BB4D817F3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Frontend", "Frontend\Frontend.csproj", "{01B4DBE8-FA72-418C-81C5-446BB4D817F3}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Backend", "Backend", "{F69A87BE-B47B-46CF-A062-C9E06C31A8A4}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\..\Documents\script.sql = ..\..\..\..\Documents\script.sql
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gateway", "Gateway\Gateway.csproj", "{63A25164-487B-4DFF-BDAF-5015C52CF35B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gateway", "Gateway\Gateway.csproj", "{63A25164-487B-4DFF-BDAF-5015C52CF35B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared", "Shared\Shared.csproj", "{329EFA52-ED52-4796-B5E4-1A36A15C2878}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shared", "Shared\Shared.csproj", "{329EFA52-ED52-4796-B5E4-1A36A15C2878}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ServicesCollection", "ServicesCollection", "{90029CF3-C80B-43F2-B655-C3CDCF2FB0B3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service_Transaction", "ServiceCollection\Service_Transaction\Service_Transaction.csproj", "{D6CFAF80-FDBF-4BC9-837D-B6CB5414DDA8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Service_Transaction", "ServiceCollection\Service_Transaction\Service_Transaction.csproj", "{D6CFAF80-FDBF-4BC9-837D-B6CB5414DDA8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service_Master", "ServiceCollection\Service_Master\Service_Master.csproj", "{929152C0-8FC8-4B16-84B3-2DB98FBA7FF4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Service_Master", "ServiceCollection\Service_Master\Service_Master.csproj", "{929152C0-8FC8-4B16-84B3-2DB98FBA7FF4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -47,13 +50,13 @@ Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {A74FAF7B-3C36-4549-80D5-2C705976F8C7}
-	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{63A25164-487B-4DFF-BDAF-5015C52CF35B} = {F69A87BE-B47B-46CF-A062-C9E06C31A8A4}
 		{90029CF3-C80B-43F2-B655-C3CDCF2FB0B3} = {F69A87BE-B47B-46CF-A062-C9E06C31A8A4}
 		{D6CFAF80-FDBF-4BC9-837D-B6CB5414DDA8} = {90029CF3-C80B-43F2-B655-C3CDCF2FB0B3}
 		{929152C0-8FC8-4B16-84B3-2DB98FBA7FF4} = {90029CF3-C80B-43F2-B655-C3CDCF2FB0B3}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A74FAF7B-3C36-4549-80D5-2C705976F8C7}
 	EndGlobalSection
 EndGlobal

@@ -5,6 +5,7 @@ using Shared.Data.Context;
 using Shared.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
+using Service_Master.Extensions;
 
 namespace Service_Master
 {
@@ -69,7 +70,7 @@ namespace Service_Master
 
             app.UseRouting();
             app.UseAuthorization();
-            //app.UseMiddleware<ErrorHandlerMiddleware>();
+            app.UseMiddleware<ErrorHandlerMiddleware>();
 
             app.UseEndpoints(endpoints =>
             {

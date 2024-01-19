@@ -5,6 +5,7 @@ using Shared.Data.Context;
 using Shared.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
+using Service_Transaction.Extensions;
 namespace Service_Transaction
 {
     public class Startup
@@ -68,7 +69,7 @@ namespace Service_Transaction
 
             app.UseRouting();
             app.UseAuthorization();
-            //app.UseMiddleware<ErrorHandlerMiddleware>();
+            app.UseMiddleware<ErrorHandlerMiddleware>();
 
             app.UseEndpoints(endpoints =>
             {
